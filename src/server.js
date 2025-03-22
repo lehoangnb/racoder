@@ -18,6 +18,7 @@ function handleStream(req, res) {
     INPUT_STREAM,
     "-filter:a",
     "volume=2.0",
+    "-ar 44100",
     "-vn",
     "-c:a",
     "libmp3lame",
