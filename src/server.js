@@ -11,8 +11,6 @@ function handleStream(req, res) {
 
   const ffmpegProcess = spawn("ffmpeg", [
     "-nostdin",
-    "-filter:a",
-    "volume=2.0",
     "-loglevel",
     "warning",
     "-re",
@@ -26,6 +24,8 @@ function handleStream(req, res) {
     "-f",
     "mp3",
     "pipe:1",
+    "-filter:a",
+    "volume=2.0",
   ]);
   ffmpegProcess.stdout.pipe(res);
 
