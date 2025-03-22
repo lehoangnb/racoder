@@ -14,6 +14,8 @@ function handleStream(req, res) {
     "-loglevel",
     "warning",
     "-re",
+    "-filter:a",
+    "volume=2.0",
     "-i",
     INPUT_STREAM,
     "-vn",
@@ -23,7 +25,6 @@ function handleStream(req, res) {
     BITRATE,
     "-f",
     "mp3",
-    " "volume=2.0"",
     "pipe:1",
   ]);
   ffmpegProcess.stdout.pipe(res);
