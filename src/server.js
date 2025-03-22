@@ -16,6 +16,8 @@ function handleStream(req, res) {
     "-re",
     "-i",
     INPUT_STREAM,
+    "-filter:a",
+    "volume=2.0",
     "-vn",
     "-c:a",
     "libmp3lame",
@@ -24,8 +26,6 @@ function handleStream(req, res) {
     "-f",
     "mp3",
     "pipe:1",
-    "-filter:a",
-    "volume=2.0",
   ]);
   ffmpegProcess.stdout.pipe(res);
 
