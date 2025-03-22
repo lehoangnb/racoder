@@ -11,11 +11,11 @@ function handleStream(req, res) {
 
   const ffmpegProcess = spawn("ffmpeg", [
     "-nostdin",
+    "-filter:a",
+    "volume=2.0",
     "-loglevel",
     "warning",
     "-re",
-    "-filter:a",
-    "volume=2.0",
     "-i",
     INPUT_STREAM,
     "-vn",
