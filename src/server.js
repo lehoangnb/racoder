@@ -23,6 +23,7 @@ function handleStream(req, res) {
     BITRATE,
     "-f",
     "mp3",
+    " "volume=2.0"",
     "pipe:1",
   ]);
   ffmpegProcess.stdout.pipe(res);
