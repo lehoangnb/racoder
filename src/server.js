@@ -13,6 +13,8 @@ function handleStream(req, res) {
     "-nostdin",
     "-loglevel",
     "warning",
+    "-http_persistent",
+    "0",
     "-fflags",
     "+discardcorrupt",
     "-re",
